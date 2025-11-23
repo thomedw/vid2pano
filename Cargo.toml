@@ -9,7 +9,7 @@ crate-type = ["cdylib"]
 [dependencies]
 wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4"
-image = "0.24"
+image = "0.25"
 imageproc = "0.25"
 nalgebra = "0.34"
 serde = { version = "1.0", features = ["derive"] }
