@@ -34,42 +34,41 @@ vid2pano allows you to upload a panoramic video and extract frames that are then
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/vid2pano.git
+git clone https://github.com/thomedw/vid2pano.git
 cd vid2pano
 ```
 
-2. Build the WASM module:
+2. Install dependencies:
 ```bash
-wasm-pack build --target web --out-dir pkg
-```
-
-3. Install web dependencies:
-```bash
-cd web
 pnpm install
 ```
 
-4. Run the development server:
+This will install both root-level dev dependencies and web dependencies.
+
+3. Run the development server:
 ```bash
-pnpm run dev
+pnpm dev
 ```
+
+This will:
+- Build the WASM module once
+- Start watching Rust files for changes (auto-rebuilds WASM on save)
+- Start the Vite dev server for the web app
 
 The app will be available at `http://localhost:5173`
 
 ### Building for Production
 
-1. Build WASM:
+Build everything with a single command:
 ```bash
-wasm-pack build --target web --out-dir pkg
+pnpm build
 ```
 
-2. Build web app:
-```bash
-cd web
-pnpm run build
-```
+This will build both the WASM module and the web app. The production build will be in `web/dist/`
 
-The production build will be in `web/dist/`
+You can also build individually:
+- `pnpm build:wasm` - Build only the WASM module
+- `pnpm build:web` - Build only the web app
 
 ## Usage
 
@@ -90,6 +89,8 @@ vid2pano/
 │   │   └── hooks/
 │   │       └── usePanoramaStitcher.ts  # WASM integration
 │   └── package.json        # Frontend dependencies
+├── package.json            # Root scripts for dev/build
+├── pkg/                    # Generated WASM package (gitignored)
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml      # CI/CD for GitHub Pages
@@ -98,17 +99,24 @@ vid2pano/
 
 ## Development
 
+### Local Development
+
+Run `pnpm dev` from the root directory to start development mode. This will:
+- Build the WASM module initially
+- Watch Rust files (`src/**/*.rs` and `Cargo.toml`) and automatically rebuild WASM on changes
+- Start the Vite dev server with hot-reload for the web app
+
 ### Rust Development
 
-The Rust code is in `src/lib.rs`. After making changes:
+The Rust code is in `src/lib.rs`. When running `pnpm dev`, changes to Rust files are automatically detected and the WASM module is rebuilt. You can also manually rebuild with:
 
 ```bash
-wasm-pack build --target web --out-dir pkg
+pnpm build:wasm
 ```
 
 ### Frontend Development
 
-The React app is in `web/`. After making changes, the dev server will hot-reload.
+The React app is in `web/`. When running `pnpm dev`, the Vite dev server will hot-reload on changes to TypeScript/React files.
 
 ## Current Implementation (Phase 1)
 
@@ -129,5 +137,5 @@ MIT License - see LICENSE file for details
 
 ## Building in Public
 
-This project is being built in public. Check out the [GitHub repository](https://github.com/yourusername/vid2pano) for the latest updates and development progress.
+This project is being built in public. Check out the [GitHub repository](https://github.com/thomedw/vid2pano) for the latest updates and development progress.
 

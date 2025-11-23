@@ -1,0 +1,21 @@
+{
+  "name": "vid2pano",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "dev": "pnpm build:wasm && concurrently -n wasm,web -c yellow,blue \"pnpm watch:wasm\" \"cd web && pnpm dev\"",
+    "watch:wasm": "chokidar \"src/**/*.rs\" \"Cargo.toml\" -c \"wasm-pack build --target web --out-dir pkg\"",
+    "build": "pnpm build:wasm && pnpm build:web",
+    "build:wasm": "wasm-pack build --target web --out-dir pkg",
+    "build:web": "cd web && pnpm build",
+    "install": "cd web && pnpm install",
+    "preview": "cd web && pnpm preview",
+    "clean": "rm -rf pkg target/web/dist target/wasm32-unknown-unknown/release"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.1.0"
+  }
+}
+
