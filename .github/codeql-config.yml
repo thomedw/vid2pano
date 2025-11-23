@@ -1,0 +1,16 @@
+name: "CodeQL Configuration"
+
+paths:
+  - src/
+  - web/src/
+  - .github/workflows/
+
+paths-ignore:
+  - target/
+  - node_modules/
+  - web/node_modules/
+  - pkg/
+  - web/dist/
+  - "**/*.wasm"
+  - "**/*.wasm.d.ts"
+
