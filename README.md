@@ -27,7 +27,7 @@ vid2pano allows you to upload a panoramic video and extract frames that are then
 
 - Rust (latest stable)
 - wasm-pack
-- Node.js 20+ and npm
+- Node.js 20+ and pnpm
 - A modern web browser with WebAssembly support
 
 ### Installation
@@ -46,12 +46,12 @@ wasm-pack build --target web --out-dir pkg
 3. Install web dependencies:
 ```bash
 cd web
-npm install
+pnpm install
 ```
 
 4. Run the development server:
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 The app will be available at `http://localhost:5173`
@@ -66,7 +66,7 @@ wasm-pack build --target web --out-dir pkg
 2. Build web app:
 ```bash
 cd web
-npm run build
+pnpm run build
 ```
 
 The production build will be in `web/dist/`
