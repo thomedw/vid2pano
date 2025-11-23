@@ -3,7 +3,6 @@ import { usePanoramaStitcher } from './hooks/usePanoramaStitcher';
 
 function App() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
-  const [frames, setFrames] = useState<ImageData[]>([]);
   const [panoramaUrl, setPanoramaUrl] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -23,12 +22,10 @@ function App() {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
-    const extractedFrames: ImageData[] = [];
     const duration = video.duration;
     const frameInterval = duration / 10; // Extract 10 frames
 
     clear();
-    setFrames([]);
 
     for (let i = 0; i < 10; i++) {
       const time = i * frameInterval;
@@ -37,14 +34,12 @@ function App() {
         video.onseeked = () => {
           ctx.drawImage(video, 0, 0);
           const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          extractedFrames.push(imageData);
           addFrame(imageData);
           resolve();
         };
       });
     }
 
-    setFrames(extractedFrames);
   };
 
   const handleStitch = () => {
@@ -52,7 +47,9 @@ function App() {
     try {
       const result = stitch();
       if (result) {
-        const blob = new Blob([result], { type: 'image/png' });
+        // Create a new Uint8Array copy to ensure proper type compatibility
+        const data = new Uint8Array(result);
+        const blob = new Blob([data], { type: 'image/png' });
         const url = URL.createObjectURL(blob);
         setPanoramaUrl(url);
       }

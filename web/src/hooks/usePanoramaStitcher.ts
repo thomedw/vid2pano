@@ -24,8 +24,10 @@ export const usePanoramaStitcher = () => {
       if (!stitcher) {
         throw new Error('Stitcher not initialized');
       }
+      // Convert Uint8ClampedArray to Uint8Array
+      const data = new Uint8Array(imageData.data);
       stitcher.add_frame(
-        imageData.data,
+        data,
         imageData.width,
         imageData.height
       );
