@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   pnpm:
-    specifier: ^10.23.0
-    version: 10.23.0
+    specifier: ^10.28.1
+    version: 10.28.1
   react:
     specifier: ^19.2.0
     version: 19.2.0
@@ -872,8 +872,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /pnpm@10.23.0:
-    resolution: {integrity: sha512-IcTlaYACrel+Tv6Li0qJqN48haN5GflX56DzDzj7xbvdBZgP/ikXmy+25uaRJC4JjZRdFgF3LK0P71+2QR4qSw==}
+  /pnpm@10.28.1:
+    resolution: {integrity: sha512-fX27yp6ZRHt8O/enMoavqva+mSUeuUmLrvp9QGiS9nuHmts6HX5of8TMwaOIxxdfuq5WeiarRNEGe1T8sNajFg==}
     engines: {node: '>=18.12'}
     hasBin: true
     dev: false
