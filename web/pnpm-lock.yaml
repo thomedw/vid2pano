@@ -9,19 +9,19 @@ dependencies:
     specifier: ^10.23.0
     version: 10.23.0
   react:
-    specifier: ^19.2.0
-    version: 19.2.0
+    specifier: ^19.2.4
+    version: 19.2.4
   react-dom:
     specifier: ^19.2.0
-    version: 19.2.0(react@19.2.0)
+    version: 19.2.0(react@19.2.4)
 
 devDependencies:
   '@types/react':
-    specifier: ^19.2.6
-    version: 19.2.6
+    specifier: ^19.2.10
+    version: 19.2.10
   '@types/react-dom':
     specifier: ^18.2.0
-    version: 18.3.7(@types/react@19.2.6)
+    version: 18.3.7(@types/react@19.2.10)
   '@vitejs/plugin-react':
     specifier: ^5.1.1
     version: 5.1.1(vite@7.2.4)
@@ -687,16 +687,16 @@ packages:
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
     dev: true
 
-  /@types/react-dom@18.3.7(@types/react@19.2.6):
+  /@types/react-dom@18.3.7(@types/react@19.2.10):
     resolution: {integrity: sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==}
     peerDependencies:
       '@types/react': ^18.0.0
     dependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.10
     dev: true
 
-  /@types/react@19.2.6:
-    resolution: {integrity: sha512-p/jUvulfgU7oKtj6Xpk8cA2Y1xKTtICGpJYeJXz2YVO2UcvjQgeRMLDGfDeqeRW2Ta+0QNFwcc8X3GH8SxZz6w==}
+  /@types/react@19.2.10:
+    resolution: {integrity: sha512-WPigyYuGhgZ/cTPRXB2EwUw+XvsRA3GqHlsP4qteqrnnjDrApbS7MxcGr/hke5iUoeB7E/gQtrs9I37zAJ0Vjw==}
     dependencies:
       csstype: 3.2.3
     dev: true
@@ -887,12 +887,12 @@ packages:
       source-map-js: 1.2.1
     dev: true
 
-  /react-dom@19.2.0(react@19.2.0):
+  /react-dom@19.2.0(react@19.2.4):
     resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
     peerDependencies:
       react: ^19.2.0
     dependencies:
-      react: 19.2.0
+      react: 19.2.4
       scheduler: 0.27.0
     dev: false
 
@@ -901,8 +901,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react@19.2.0:
-    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
+  /react@19.2.4:
+    resolution: {integrity: sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==}
     engines: {node: '>=0.10.0'}
     dev: false
 
